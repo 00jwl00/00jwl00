@@ -344,28 +344,16 @@
       
         
           
-            <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="命令格式：命令-选项-参数"><a href="#命令格式：命令-选项-参数" class="headerlink" title="命令格式：命令 选项 参数"></a>命令格式：命令 选项 参数</h3><p>  例：ls 【选项】 【文件或目录】<br>  选项：-a 显示所有文件<br>      -l 显示详细信息<br>      -d 查看目录属性<br>      -h 人性化显示文件大小<br>      -i 显示inode</p>
-<h3 id="文件处理："><a href="#文件处理：" class="headerlink" title="文件处理："></a>文件处理：</h3><h3 id="1、目录处理命令"><a href="#1、目录处理命令" class="headerlink" title="1、目录处理命令"></a>1、目录处理命令</h3><p> 建立：建立目录 mkdir [目录名]<br>       递归创建 mkdir -p 先目录/后目录<br> 切换：cd /目录/<br>       cd -返回上一级<br>       cd ..进入上一级目录<br>       cd .进入当前目录<br>       cd /按两下tab进入根目录下所有目录<br> 相对路径：参照当前所在位置，当当前位置发生变<br>           化时就不一定可以执行当前命令</p>
-<p> 绝对路径：从根目录下执行可以一直进行<br> pwd:打印当前目录<br> 删除目录：只能删除空白目录 rmdir<br>           rm [目录]然后根据提示输入<br>           rm -rf 目录 强制删除<br>           rm -r 目录 分级删除<br> 复制：cp [选项][原文件或目录][目标目录]<br>       cp -r 复制目录<br>       cp -p 连带文件属性复制<br>       cp -d 若源文件是连接文件，则复制链接属性<br>       cp -a 相当于 -pdr所有属性都一样包括日志时间<br> 剪切：mv [原文件或目录] [目标目录]<br>       当原文件和目标文件在同一个目录下<br>       用 mv 原文件目录 目标目录可改名<br>       当原文件和目标文件不在同一个目录下即为剪切</p>
-<h3 id="2、文件处理命令"><a href="#2、文件处理命令" class="headerlink" title="2、文件处理命令"></a>2、文件处理命令</h3><h3 id="3、连接命令"><a href="#3、连接命令" class="headerlink" title="3、连接命令"></a>3、连接命令</h3><p>  软连接：ln -s[源文件][目标文件]<br>          软连接更改源文件和目标文件<br>          都会使文件改变，像windows里边的快捷方式<br>          删除源文件会使连接断裂无法打开<br>  硬连接：具有相同的i节点和存储空间</p>
-<h3 id="4、文件搜索命令"><a href="#4、文件搜索命令" class="headerlink" title="4、文件搜索命令"></a>4、文件搜索命令</h3><p>   文件搜索命令 locate（定位）文件名 速度快<br>        更新数据库：updatedb<br>            权限问题需要加sudo<br>        速度快 功能单一 只能按文件名搜索</p>
-<p>   命令搜索命令 whereis（哪里）与which（哪一个）<br>  <em>文件搜索命令 find（找）遍历 强大<br>       格式 find [搜索范围][搜索条件] 具体查询<br>           例 find / -name install.log<br>               搜索范围缩小<br>(模糊查询)通配符 1）</em> 匹配任意内容<br>                 2）[]匹配任意一个中括号内的内容<br>                 例： find /root -name “ab[cd]”<br>                 代表在root文件下搜索ab后边跟着一个c或者d的文件<br>                 如果仅有”*[cd]”代表搜索以c或者d结尾的文件<br>                 -user按照所有者搜索<br>                 -nouser查找没有所有者文件<br>                 -mtime 后边+或-或者只有一个数字代表查询那个数字<br>                 的前后或者当天的文件<br>                 -size 按照文件大小<br>                find /etc -size +20k -a -size -50k代表查询文件大小在20-50k之间的文件<br>                find /etc -size +20k -a -size -50k -exec ls -lh {}\;</p>
-<pre><code>---------------------------------- ------------  ---
-          命令一                      命令二       标准格式
-上式代表命令一的结果让命令二再执行
-
- -inum 直接按照文件接点查询(和mtime相似)
-
- 3）？匹配一个单独的内容
-</code></pre><p>   字符串搜索   grep<br>          格式 grep [选项] 字符串 文件名<br>          选项：-i 忽略大小写<br>                -v 排除指定字符串<br>           例：grep “size” 文件名 代表搜索文件中具有size的文件<br>              选项加在字符串前面</p>
-<p>区别find与grep：find完全查询 grep包含查询<br>find搜索符合条件的文件<br>grep搜索符合条件的字符串</p>
-<h3 id="5、帮助命令"><a href="#5、帮助命令" class="headerlink" title="5、帮助命令"></a>5、帮助命令</h3><p>   man 命令<br>   help 命令（获取内部命令）<br>   info 命令（会进入所有的子帮助界面，带有*号的为帮助条）<br>    -u 进入上一层页面<br>    -n 进入下一个帮助小节<br>    -p 进入上一个帮助小节<br>    -q 退出</p>
-<h3 id="6、压缩与解缩命令"><a href="#6、压缩与解缩命令" class="headerlink" title="6、压缩与解缩命令"></a>6、压缩与解缩命令</h3><p>   .zip：<br>      常用的压缩格式 .zip .gz .bz2<br>      压缩文件.zip：zip 压缩文件名 源文件<br>      压缩目录.zip: zip -r 压缩文件名 源目录<br>      解压文件  unzip 压缩文件<br>   .gz<br>      压缩格式 gzip 文件名（原文件会消失）<br>               gzip -c 源文件 &gt; 压缩文件（原文件不消失）<br>               gzip -r 目录（压缩目录下的子文件）<br>      接缩文件 gzip -d 压缩包名<br>               gunzip 压缩文件<br>               gunzip -r 文件名 （解压目录下的子文件）<br>   .bzip2<br>      压缩格式 bzip2 源文件(原文件消失)<br>               bzip2 -k 源文件（保留原文件）<br>               不能压缩目录<br>      解缩文件 bzip2 -d 压缩文件<br>               bunzip2 压缩文件<br>               加-k会保留原压缩文件<br>压缩目录的方法：<br>   .tar.gz<br>      压缩格式 打包：tar -cvf 打包文件名 源文件<br>               压缩：任何一种想用的压缩格式 打包文件名<br>      解缩文件 解包：tar -xvf 打包文件名<br>    直接压缩格式:<br>         .tar.gz<br>               .tar.gz : tar -zcvf 压缩包名.tar.gz 源文件<br>         解缩文件<br>               tar -zxvf 压缩包名.tar.gz<br>         .tar.bz2<br>               tar -jcvf 压缩包名.tar.bz2 源文件<br>         解缩文件<br>               tar -jxvf 压缩包名.tar.bz2<br>手动解压缩位置 ：tar -jxvf jp.tar.bz2 -C 目录名<br>一次压缩多个目录：tar -zcvf 压缩包名.tar.gz 目录名1 目录名2<br>若想特定压缩位置：在压缩包名前面加绝对路径即可（目标目录名）<br>只查看不解压 tar -ztvf 压缩包名.tar.gz</p>
-<h3 id="7、关机与重启"><a href="#7、关机与重启" class="headerlink" title="7、关机与重启"></a>7、关机与重启</h3><p>shutdown [选项] 时间<br>选项分为-c:取消前一个关机命令<br>        -h:关机<br>        -r:重启 时间后边加&amp;，会在后台执行<br>关机 halt poweroff init 0（不用）<br>重启 reboot init 6（不用）<br>退出登录logout</p>
-<h3 id="8、shell脚本执行方式"><a href="#8、shell脚本执行方式" class="headerlink" title="8、shell脚本执行方式"></a>8、shell脚本执行方式</h3><p>   输出指定内容：echo 选项 输出内容<br>                 -e：反斜杠控制字符（在要操作的地方直接放置控制字符）<br>   \a输出警告音\b退格删除键\n换行符\r回车键<br>   \t制表符tab键\v垂直制表符\0nnn按照8进制输出<br>   \xhh十六进制输出（hh&amp;nnn都是数字）<br>    颜色输出”\e[1;颜色代码 输出内容 \e[0m”即可输出指定内容<br>30m=黑色，31m=红色，32m=绿色，33m=黄色<br>34m=蓝色，35m=洋红，36m=青色，37m=白色</p>
-<p>*PATH:定义的是系统搜索命令的路径。</p>
-<h2 id="在Ubuntu中下载软件包-sudo-apt-get-install-vim"><a href="#在Ubuntu中下载软件包-sudo-apt-get-install-vim" class="headerlink" title="*在Ubuntu中下载软件包  sudo apt-get install vim"></a>*在Ubuntu中下载软件包  sudo apt-get install vim</h2><h2 id="markdown"><a href="#markdown" class="headerlink" title="markdown"></a><a href="https://segmentfault.com/markdown" target="_blank" rel="external">markdown</a></h2>
-          
+          常用命令命令格式：命令 选项 参数  例：ls 【选项】 【文件或目录】  选项：-a 显示所有文件      -l 显示详细信息      -d 查看目录属性      -h 人性化显示文件大小      -i 显示inode
+文件处理：1、目录处理命令 建立：建立目录 mkdir [目录名]  
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/09/one/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -484,7 +472,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" rel="gallery_cj6781d380002g0vbdglz2pg4"
+                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" rel="gallery_cj6790zcy0003iovb5wucdvgo"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" itemprop="contentUrl"/>
               </a>
@@ -492,7 +480,7 @@
           
             
               <a class="post-gallery-img fancybox"
-                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cj6781d380002g0vbdglz2pg4"
+                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cj6790zcy0003iovb5wucdvgo"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" itemprop="contentUrl"/>
               </a>
@@ -507,9 +495,16 @@
       
         
           
-            <h2 id="实验博客"><a href="#实验博客" class="headerlink" title="实验博客"></a>实验博客</h2><p>   The first blog<br>   666</p>
+          实验博客   The first blog   666
 
           
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/09/postName/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -627,17 +622,15 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/08/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -936,5 +929,5 @@
 
   
 
-</body>
+<body<a href="https://github.com/00jwl00"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>>
 </html>
