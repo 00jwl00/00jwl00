@@ -1,5 +1,5 @@
-http://00jwl00.github.io/2018/08/23/flask2/
-http://00jwl00.github.io/2018/07/29/news/
-http://00jwl00.github.io/2018/07/29/hello-world/
-http://00jwl00.github.io/2017/08/09/one/
-http://00jwl00.github.io/2017/08/09/postName/
+http://qqlucky.club/2018/08/23/flask2/
+http://qqlucky.club/2018/07/29/news/
+http://qqlucky.club/2018/07/29/hello-world/
+http://qqlucky.club/2017/08/09/one/
+http://qqlucky.club/2017/08/09/postName/
