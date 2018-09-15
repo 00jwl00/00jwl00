@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="Water cell">
 <meta property="og:description" content="常用命令命令格式：命令 选项 参数  例：ls 【选项】 【文件或目录】  选项：-a 显示所有文件      -l 显示详细信息      -d 查看目录属性      -h 人性化显示文件大小      -i 显示inode 文件处理：1、目录处理命令 建立：建立目录 mkdir [目录名]       递归创建 mkdir -p 先目录/后目录 切换：cd /目录/       cd -返回">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-12T15:40:46.000Z">
+<meta property="og:updated_time" content="2018-09-15T09:59:57.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="liunx系统的常用指令">
 <meta name="twitter:description" content="常用命令命令格式：命令 选项 参数  例：ls 【选项】 【文件或目录】  选项：-a 显示所有文件      -l 显示详细信息      -d 查看目录属性      -h 人性化显示文件大小      -i 显示inode 文件处理：1、目录处理命令 建立：建立目录 mkdir [目录名]       递归创建 mkdir -p 先目录/后目录 切换：cd /目录/       cd -返回">
@@ -353,7 +353,18 @@
         <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="命令格式：命令-选项-参数"><a href="#命令格式：命令-选项-参数" class="headerlink" title="命令格式：命令 选项 参数"></a>命令格式：命令 选项 参数</h3><p>  例：ls 【选项】 【文件或目录】<br>  选项：-a 显示所有文件<br>      -l 显示详细信息<br>      -d 查看目录属性<br>      -h 人性化显示文件大小<br>      -i 显示inode</p>
 <h3 id="文件处理："><a href="#文件处理：" class="headerlink" title="文件处理："></a>文件处理：</h3><h3 id="1、目录处理命令"><a href="#1、目录处理命令" class="headerlink" title="1、目录处理命令"></a>1、目录处理命令</h3><p> 建立：建立目录 mkdir [目录名]<br>       递归创建 mkdir -p 先目录/后目录<br> 切换：cd /目录/<br>       cd -返回上一级<br>       cd ..进入上一级目录<br>       cd .进入当前目录<br>       cd /按两下tab进入根目录下所有目录<br> 相对路径：参照当前所在位置，当当前位置发生变<br>           化时就不一定可以执行当前命令</p>
 <p> 绝对路径：从根目录下执行可以一直进行<br> pwd:打印当前目录<br> 删除目录：只能删除空白目录 rmdir<br>           rm [目录]然后根据提示输入<br>           rm -rf 目录 强制删除<br>           rm -r 目录 分级删除<br> 复制：cp [选项][原文件或目录][目标目录]<br>       cp -r 复制目录<br>       cp -p 连带文件属性复制<br>       cp -d 若源文件是连接文件，则复制链接属性<br>       cp -a 相当于 -pdr所有属性都一样包括日志时间<br> 剪切：mv [原文件或目录] [目标目录]<br>       当原文件和目标文件在同一个目录下<br>       用 mv 原文件目录 目标目录可改名<br>       当原文件和目标文件不在同一个目录下即为剪切</p>
-<h3 id="2、文件处理命令"><a href="#2、文件处理命令" class="headerlink" title="2、文件处理命令"></a>2、文件处理命令</h3><h3 id="3、连接命令"><a href="#3、连接命令" class="headerlink" title="3、连接命令"></a>3、连接命令</h3><p>  软连接：ln -s[源文件][目标文件]<br>          软连接更改源文件和目标文件<br>          都会使文件改变，像windows里边的快捷方式<br>          删除源文件会使连接断裂无法打开<br>  硬连接：具有相同的i节点和存储空间</p>
+<h3 id="2、文件处理命令"><a href="#2、文件处理命令" class="headerlink" title="2、文件处理命令"></a>2、文件处理命令</h3><pre><code>进入vim编辑器，要在vim编辑器里面插入数据需要使用i指令，vim的常用指令如下：
+光标运动: h,j , k, l （上/下/左/右）
+删除字符: x
+删除行 : dd
+模式退出 : Esc,Insert（或者i）
+退出编辑器 : q
+强制退出不保存: q!
+运行shell命令 :sh（使用exit返回vi编辑器）
+保存文件 :w
+文本查找 : /
+</code></pre><p>   输入内容后需要先按ESC，再按“：”，最后输入wq回车，就能够退出保存</p>
+<h3 id="3、连接命令"><a href="#3、连接命令" class="headerlink" title="3、连接命令"></a>3、连接命令</h3><p>  软连接：ln -s[源文件][目标文件]<br>          软连接更改源文件和目标文件<br>          都会使文件改变，像windows里边的快捷方式<br>          删除源文件会使连接断裂无法打开<br>  硬连接：具有相同的i节点和存储空间</p>
 <h3 id="4、文件搜索命令"><a href="#4、文件搜索命令" class="headerlink" title="4、文件搜索命令"></a>4、文件搜索命令</h3><p>   文件搜索命令 locate（定位）文件名 速度快<br>        更新数据库：updatedb<br>            权限问题需要加sudo<br>        <em>速度快 
         </em>功能单一<br>        _只能按文件名搜索</p>
 <p>   命令搜索命令 whereis（哪里）与which（哪一个）<br>  <strong>文件搜索命令 find（找）遍历 强大</strong><br>       格式 find [搜索范围][搜索条件] 具体查询<br>           例 find / -name install.log<br>               搜索范围缩小<br>(模糊查询)通配符 1）<em> 匹配任意内容<br>                 2）[]匹配任意一个中括号内的内容<br>                 例： find /root -name “ab[cd]”<br>                 代表在root文件下搜索ab后边跟着一个c或者d的文件<br>                 如果仅有”</em>[cd]”代表搜索以c或者d结尾的文件<br>                 -user按照所有者搜索<br>                 -nouser查找没有所有者文件<br>                 -mtime 后边+或-或者只有一个数字代表查询那个数字<br>                 的前后或者当天的文件<br>                 -size 按照文件大小<br>                find /etc -size +20k -a -size -50k代表查询文件大小在20-50k之间的文件</p>
