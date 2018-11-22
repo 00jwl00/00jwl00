@@ -94,20 +94,17 @@
 
 
 
-<meta name="description" content="实验博客   The first blog   666">
+<meta name="description" content="#encoding: utf-8 from flask import Flaskfrom flask_sqlalchemy import SQLAlchemyimport config app=Flask(name)app.config.from_object(config)db=SQLAlchemy(app) #创建数据库的表class Article(db.Model):    tablena">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小白博客">
-<meta property="og:url" content="http://qqlucky.club/2017/08/09/postName/index.html">
+<meta property="og:title" content="flask-mysql创建表">
+<meta property="og:url" content="http://qqlucky.club/2018/11/22/flask-mysql/index.html">
 <meta property="og:site_name" content="Water cell">
-<meta property="og:description" content="实验博客   The first blog   666">
+<meta property="og:description" content="#encoding: utf-8 from flask import Flaskfrom flask_sqlalchemy import SQLAlchemyimport config app=Flask(name)app.config.from_object(config)db=SQLAlchemy(app) #创建数据库的表class Article(db.Model):    tablena">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg">
-<meta property="og:image" content="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg">
-<meta property="og:updated_time" content="2017-08-09T15:07:18.000Z">
+<meta property="og:updated_time" content="2018-11-22T13:34:05.168Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小白博客">
-<meta name="twitter:description" content="实验博客   The first blog   666">
-<meta name="twitter:image" content="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg">
+<meta name="twitter:title" content="flask-mysql创建表">
+<meta name="twitter:description" content="#encoding: utf-8 from flask import Flaskfrom flask_sqlalchemy import SQLAlchemyimport config app=Flask(name)app.config.from_object(config)db=SQLAlchemy(app) #创建数据库的表class Article(db.Model):    tablena">
 
 
 
@@ -136,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://qqlucky.club/2017/08/09/postName/"/>
+  <link rel="canonical" href="http://qqlucky.club/2018/11/22/flask-mysql/"/>
 
 
 
 
 
-  <title>小白博客 | Water cell</title>
+  <title>flask-mysql创建表 | Water cell</title>
   
 
 
@@ -275,7 +272,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qqlucky.club/2017/08/09/postName/">
+    <link itemprop="mainEntityOfPage" href="http://qqlucky.club/2018/11/22/flask-mysql/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小白">
@@ -292,7 +289,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">小白博客</h1>
+          <h1 class="post-title" itemprop="name headline">flask-mysql创建表</h1>
         
 
         <div class="post-meta">
@@ -304,8 +301,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-09T08:11:00+08:00">
-                2017-08-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-22T21:32:24+08:00">
+                2018-11-22
               </time>
             
 
@@ -322,7 +319,7 @@
 
           
           
-             <span id="/2017/08/09/postName/" class="leancloud_visitors" data-flag-title="小白博客">
+             <span id="/2018/11/22/flask-mysql/" class="leancloud_visitors" data-flag-title="flask-mysql创建表">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -351,33 +348,23 @@
 
       
       
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox"
-                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" rel="gallery_cjosn1nky0004s1x5hi1d1qfn"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-0.jpg" itemprop="contentUrl"/>
-              </a>
-            
-          
-            
-              <a class="post-gallery-img fancybox"
-                 href="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" rel="gallery_cjosn1nky0004s1x5hi1d1qfn"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="http://bruce.u.qiniudn.com/2013/11/27/reading/photos-1.jpg" itemprop="contentUrl"/>
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
 
       
-        <h2 id="实验博客"><a href="#实验博客" class="headerlink" title="实验博客"></a>实验博客</h2><p>   The first blog<br>   666</p>
+        <p>#encoding: utf-8</p>
+<p>from flask import Flask<br>from flask_sqlalchemy import SQLAlchemy<br>import config</p>
+<p>app=Flask(<strong>name</strong>)<br>app.config.from_object(config)<br>db=SQLAlchemy(app)</p>
+<p>#创建数据库的表<br>class Article(db.Model):<br>    <strong>tablename</strong>=’article’<br>    id=db.Column(db.Integer,primary_key=True,autoincrement=True)<br>    title=db.Column(db.String(100),nullable=False)<br>    content=db.Column(db.Text,nullable=False)</p>
+<p>##注释</p>
+<pre><code>#nullable是否为空
+#autoincrement主键自增长
+#primary_key//设置主键
+#函数名.Integer整形
+#函数名.String代表varchar指定最高长度
+#函数名.Text 代表可以无限输入text
+#以上是固定格式
+</code></pre><p>db.create_all()//将模型添加到数据库</p>
+<p>@app.route(‘/‘)<br>def index():<br>    return ‘Hello,world!’</p>
+<p>if <strong>name</strong> == ‘<strong>main</strong>‘:<br>    app.run(debug=True)</p>
 
       
     </div>
@@ -402,15 +389,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/08/23/flask2/" rel="next" title="Flask学习(2)">
+                <i class="fa fa-chevron-left"></i> Flask学习(2)
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/09/one/" rel="prev" title="liunx系统的常用指令">
-                liunx系统的常用指令 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -464,17 +451,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -542,22 +520,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验博客"><span class="nav-number">1.</span> <span class="nav-text">实验博客</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
