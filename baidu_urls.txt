@@ -1,3 +1,4 @@
+http://qqlucky.club/2018/11/22/mysql-python安装/
 http://qqlucky.club/2018/11/22/flask-mysql/
 http://qqlucky.club/2018/08/23/flask2/
 http://qqlucky.club/2018/07/29/news/
